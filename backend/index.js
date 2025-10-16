@@ -16,6 +16,9 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // API routes
 app.use('/rizz', rizzRoutes);
+app.get("/", (req, res) => {
+  res.status(200).send("Rizz backend is alive");
+});
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
